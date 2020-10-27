@@ -1,4 +1,4 @@
-# Onionite
+# onio
 
 > Explore the Tor network - [onio.blackhatch.io](https://onio.blackhatch.io)
 
@@ -8,7 +8,7 @@ PWA to view information on the individual nodes that make up the Tor network.
 
 ## Credit
 
-Onionite is heavily inspired by [Atlas](https://gitweb.torproject.org/atlas.git) and [Globe](https://github.com/makepanic/globe).
+onio is heavily inspired by [Atlas](https://gitweb.torproject.org/atlas.git) and [Globe](https://github.com/makepanic/globe).
 
 All information is provided by the [Onionoo](https://onionoo.torproject.org) API.
 

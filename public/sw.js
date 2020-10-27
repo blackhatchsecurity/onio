@@ -1,5 +1,5 @@
 /* eslint-env browser */
-var cacheName = 'onionite-cache-v1';
+var cacheName = 'onio-cache-v1';
 var offlineUrl = '/no-connection';
 
 // Install

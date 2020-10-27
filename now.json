@@ -1,6 +1,6 @@
 {
-  "name": "onionite",
-  "alias": "onionite",
+  "name": "onio",
+  "alias": "onio",
   "public": true,
   "env": {
     "NODE_ENV": "production",

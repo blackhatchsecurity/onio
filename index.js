@@ -44,4 +44,4 @@ app.use(controllers.error404);
 app.use(controllers.error);
 
 // Start app
-app.listen(port, () => console.log(`Onionite listening on port ${port}`));
+app.listen(port, () => console.log(`onio listening on port ${port}`));
