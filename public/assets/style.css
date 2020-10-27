@@ -1,0 +1,621 @@
+/* Global styles */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.025em;
+  background: #b24592;
+  background: linear-gradient(to left, #b24592 , #f15f79);
+  color: #777;
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+a {
+  color: #f15f79;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #b24592;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: calc(100% - 2em);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.status,
+dl,
+pre,
+.content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Header */
+header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 3px #eaeaea;
+}
+
+header .wrapper {
+  display: flex;
+}
+
+header .title {
+  padding: 0.6em 0;
+}
+
+header .title .icon-tor {
+  color: #b24592;
+}
+
+h1 {
+  margin: 0;
+}
+
+.search {
+  flex: 1;
+  margin-left: 5em;
+  display: flex;
+}
+
+.search label {
+  flex: 1;
+  display: flex;
+}
+
+.search input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #666;
+  width: 100%;
+  -webkit-appearance: none;
+  border: 1px solid #eee;
+  border-width: 0 1px;
+  font-size: 28px;
+  padding: 0 0.2em;
+  border-radius: 0;
+}
+.search input:focus {
+  outline: 0;
+}
+
+.menu-button {
+  position: relative;
+  width: 4rem;
+  font-size: 3em;
+  text-align: center;
+  border-right: 1px solid #eee;
+  cursor: pointer;
+}
+.menu-button .heart {
+  fill: #b24592;
+  transition: fill 0.2s ease;
+}
+.menu-button:hover .heart {
+  fill: #f15f79;
+}
+
+/* Main */
+main {
+  padding-top: 5.6em;
+  color: #fff;
+  flex: 1;
+  -ms-flex: inherit;
+}
+
+main a {
+  color: #fff;
+  text-decoration: underline;
+}
+main a:hover {
+  color: rgba(255,255,255,0.75);
+}
+
+/* Listing page */
+table {
+  font-family: "Source Code Pro", Consolas, monospace;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 0.4em;
+  background: rgba(255, 255, 255, 0.1);
+}
+th {
+  font-weight: normal;
+  background: rgba(255, 255, 255, 0.3);
+}
+tr:nth-of-type(even) td {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+td:first-child {
+  text-align: center;
+}
+
+.pagination {
+  margin-top: 0.6em;
+}
+
+.pagination a {
+  text-decoration: none;
+  font-family: "Georgia", "Apple Symbols", serif;
+  font-size: 3em;
+  line-height: 0.6em;
+}
+
+.pagination .prev {
+  float: left;
+}
+.pagination .next {
+  float: right;
+}
+
+table td:nth-of-type(6) {
+  letter-spacing: -0.4em;
+}
+
+table i {
+  display: inline-block;
+  max-width: 1em;
+  overflow: hidden;
+  letter-spacing: normal;
+}
+
+/* Node page */
+.node-title {
+  float: left;
+}
+
+.node-title .heart {
+  fill: transparent;
+  stroke: #fff;
+  width: 1em;
+  margin-right: 0.4em;
+  position: relative;
+  top: 0.25em;
+  transition: fill 0.2s ease;
+  cursor: pointer;
+}
+.node-title .heart:hover {
+  fill: rgba(255, 255, 255, 0.25);
+}
+.node-title .heart.hearted {
+  fill: #fff;
+}
+
+.status {
+  float: right;
+  font-size: 14px;
+  font-family: "Source Code Pro", Consolas, monospace;
+}
+
+.status h3 {
+  display: inline;
+  margin-right: 0.6em;
+}
+
+dl {
+  margin: 0;
+  font-family: "Source Code Pro", Consolas, monospace;
+}
+
+dt:not(:first-child) {
+  margin-top: 1em;
+}
+
+dd {
+  margin: 0.2em 0 0 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+dd.flag {
+  margin-left: 0.5em;
+}
+
+dd.flag i {
+  opacity: 0.5;
+}
+
+.overview {
+  position: relative;
+}
+
+.overview .icon-tor {
+  position: absolute;
+  font-size: 10em;
+  top: 3.6rem;
+  right: 1rem;
+  opacity: 0.3;
+}
+
+.bandwidth small {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+pre {
+  margin: 0;
+  overflow: hidden;
+  font-size: calc(1.35vw - .03em);
+  letter-spacing: normal;
+}
+
+.columns {
+  -moz-columns: 2;
+       columns: 2;
+}
+.columns > * {
+  overflow: hidden;
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* About */
+.content {
+  line-height: 1.4em;
+}
+
+.content p:first-child {
+  margin-top: 0;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+code {
+  white-space: nowrap;
+  padding: 0 0.2em;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+dl.flags {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+}
+
+/* No connection */
+.sad {
+  font-size: 100px;
+  text-align: center;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Footer */
+footer {
+  margin-top: 2em;
+  padding: 1em 0;
+  background: #fff;
+}
+
+.me {
+  float: right;
+}
+
+/* Menu */
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1;
+  height: 100%;
+  max-width: 500px;
+  overflow-y: scroll;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+.menu.active {
+  transform: translateX(0%);
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: 0.4em 0.7em;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease
+}
+.menu a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.menu .empty {
+  padding: 1em;
+  font-size: 18px;
+}
+
+/* Cache message */
+.cache-message {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+}
+
+/* Large desktop */
+@media (min-width: 1230px) {
+  pre {
+    font-size: 16px;
+  }
+}
+
+/* Small desktop */
+@media (min-width: 800px) and (max-width: 1000px) {
+
+  /* Hide country column */
+  th:nth-of-type(5),
+  td:nth-of-type(5) {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+
+  /* Reduce header/footer margins */
+  main {
+    padding-top: 4.8em;
+  }
+  footer {
+    margin-top: 1em;
+  }
+
+  /* Increase searchbar size */
+  .search {
+    margin-left: 2em;
+  }
+
+  /* Get rid of browser table layout */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  /* Hide table headers */
+  thead {
+    display: none;
+  }
+
+  /* Redo padding and sections */
+  tr {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1em;
+  }
+  tr:nth-of-type(even) {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  tr:not(:last-child) {
+    margin-bottom: 1em;
+  }
+  td,
+  tr:nth-of-type(even) td {
+    padding: 0;
+    background: none;
+  }
+  td:not(:last-child) {
+    margin-bottom: 0.5em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  /* Position number on the right */
+  td:first-child {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+  }
+  td:first-child:before { content: '#'; }
+
+  /* Set labels */
+  td:not(:first-child):before {
+    display: inline-block;
+    min-width: 7em;
+    margin-right: 1em;
+    letter-spacing: normal;
+  }
+  td:nth-of-type(2):before { content: "Nickname:"; }
+  td:nth-of-type(3):before { content: "Bandwidth:"; }
+  td:nth-of-type(4):before { content: "Uptime:"; }
+  td:nth-of-type(5):before { content: "Country:"; }
+  td:nth-of-type(6):before { content: "Flags:"; }
+  td:nth-of-type(7):before { content: "Type:"; }
+
+  /* Collapse columns on smaller screens */
+  .columns {
+    -moz-columns: 1;
+         columns: 1;
+  }
+}
+
+/* This needs to happen slightly before the next breakpoint */
+@media (max-width: 570px) {
+
+  /* List footer links */
+  footer .wrapper > a {
+    display: block;
+    margin-bottom: 0.2em;
+  }
+  footer .divider {
+    display: none;
+  }
+  .me {
+    float: none;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 500px) {
+
+  /* Move searchbar below title */
+  header {
+    position: static;
+  }
+  header .wrapper {
+    position: relative;
+  }
+  header .title {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 1em;
+    background: #fff;
+    box-shadow: 0px 3px #eaeaea;
+  }
+  .search {
+    position: absolute;
+    top: 1.2em;
+    left: 0;
+    transform: translateY(150%);
+    width: 100%;
+    margin: 0;
+    background: #fff;
+    box-shadow: 0px 3px #eaeaea;
+  }
+  .ios .search {
+    top: 0.4em;
+  }
+  .search input {
+    font-size: 20px;
+    padding: 0.4em 0.2em;
+  }
+  .menu-button {
+    position: fixed;
+    top: 0;
+    right: 1rem;
+    z-index: 1;
+    border-left: 1px solid #eee;
+  }
+  main {
+    padding-top: 8.5em;
+  }
+
+  /* Hide searchbar on about and no-connection page */
+  .about .search,
+  .no-connection .search {
+    display: none;
+  }
+  .about main,
+  .no-connection main {
+    padding-top: 4.5em;
+  }
+
+  /* Clear float on node title/status */
+  .node-title,
+  .status {
+    float: none;
+  }
+
+  /* Hide tor icon on node page */
+  .overview .icon-tor {
+    display: none;
+  }
+
+  /* Reduce list title padding */
+  td:not(:first-child):before {
+    min-width: 6em;
+  }
+}
+
+/* Fix menu button overlapping title on iPhone 5 */
+@media (max-width: 360px) {
+  .menu-button {
+    right: 0;
+  }
+}
+
+/* Icons */
+@font-face {
+  font-family: 'iconfont';
+  src: url('/assets/iconfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'iconfont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tor:before {
+  content: "\e900";
+}
+.icon-authority:before {
+  content: "\e901";
+}
+.icon-badexit:before {
+  content: "\e902";
+}
+.icon-exit:before {
+  content: "\e903";
+}
+.icon-fast:before {
+  content: "\e904";
+}
+.icon-guard:before {
+  content: "\e905";
+}
+.icon-hsdir:before {
+  content: "\e906";
+}
+.icon-running:before {
+  content: "\e907";
+}
+.icon-stable:before {
+  content: "\e908";
+}
+.icon-v2dir:before {
+  content: "\e909";
+}
+.icon-valid:before {
+  content: "\e90a";
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Onionite{{ ' - ' + pageTitle | title if pageTitle }}</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="theme-color" content="#895CA1">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/assets/style.css?v2">
+  </head>
+  <body class="{{ bodyClass }}">
+
+    <header role="banner">
+      <div class="wrapper clearfix">
+        <a class="title" href="/"><h1><i class="icon-tor"></i> Onionite</h1></a>
+        <form role="search" class="search" action="/">
+          <label>
+            <span class="hidden">Search</span>
+            <input type="search" placeholder="Search..." name="s" value="{{ req.query.s }}">
+          </label>
+        </form>
+      </div>
+    </header>
+
+    <main role="main" class="wrapper">
+      {% block main %}{% endblock %}
+    </main>
+
+    <footer role="contentinfo">
+      <div class="wrapper">
+        v{{version}}
+        <span class="divider">-</span>
+        <a href="/about">About</a>
+        <span class="divider">-</span>
+        <a target="_blank" href="//github.com/blackhatchsecurity/onio">Source code</a>
+        <span class="divider">-</span>
+        <a target="_blank" href="//github.com/blackhatchsecurity/onio/issues">Report a bug</a>
+        <div class="me">
+          Proudly hosted by <a target="_blank" href="//github.com/blackhatchsecurity">@blackhatchsecurity</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>window.cacheDate=false;</script>
+    <script src="/assets/enhancements.js?v2" async></script>
+  </body>
+</html>
